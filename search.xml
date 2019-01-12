@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[C#将图片保存到Access数据库]]></title>
-    <url>%2F2019%2F01%2F08%2FC-%E5%B0%86%E5%9B%BE%E7%89%87%E4%BF%9D%E5%AD%98%E5%88%B0Access%E6%95%B0%E6%8D%AE%E5%BA%93%2F</url>
-    <content type="text"></content>
+    <title><![CDATA[C#_图片在Access数据库中的读入与读出]]></title>
+    <url>%2F2019%2F01%2F12%2FC-%E5%9B%BE%E7%89%87%E5%9C%A8Access%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E7%9A%84%E8%AF%BB%E5%85%A5%E4%B8%8E%E8%AF%BB%E5%87%BA%2F</url>
+    <content type="text"><![CDATA[前言&#8194;&#8194;最近在做C#大作业的时候需要添加了一个功能，就是每个用户都可以选择自己喜欢的头像，在登陆之后用户可以在主界面内看到自己的头像。我使用的是Access数据库。 实现方法&#8194;&#8194;思路：将图片以分解为二进制流存入数据库，读取的时候再将数据库中的二进制流转换为图片就OK。 将图片存入数据库的代码12345678910MemoryStream stream = new MemoryStream();byte[] photo = null;Image img = this.pictureBox1.Image;//将picturebox中的图片定义为一个Image对象img.Save(stream, System.Drawing.Imaging.ImageFormat.Bmp);photo = stream.ToArray();stream.Close();string sql = &quot;UPDATE employee set[touxiang] =@img where [username]=&apos;&quot; + username.Text + &quot;&apos;&quot;;//将图片存入数据库的sql命令语句(touxiang是我在数据库中起的列名，根据username将图片存入相对应的用户下面。)OleDbCommand comm = new OleDbCommand(sql, conn);comm.Parameters.Add(&quot;@img&quot;, OleDbType.VarBinary, photo.Length).Value = photo;comm.ExecuteNonQuery(); 将图片从数据库中读出来的代码12345678string sql = &quot;Select touxiang From employee Where[UserName]=&apos;&quot; + bianhao + &quot;&apos;&quot;;OleDbCommand comm = new OleDbCommand(sql, conn);OleDbDataReader sdr = comm.ExecuteReader();sdr.Read();//从数据库中读取MemoryStream ms = new MemoryStream((byte[])sdr[0]);Image image = Image.FromStream(ms);sdr.Close();pictureBox1.Image = image;//将图片放到picturebox中 Attention头文件中一定还要加上 using System.IO 在数据库中一定要设置头像列的数据类型为OLE对象，如下图所示：]]></content>
       <categories>
         <category>C#</category>
       </categories>
       <tags>
-        <tag>数据库</tag>
-        <tag>C#</tag>
+        <tag>&lt;font size=4 color=#0000FF &gt;C#&lt;/font&gt;</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[xiao]]></title>
     <url>%2F2019%2F01%2F07%2Fxiao%2F</url>
-    <content type="text"><![CDATA[肖鹏波我是肖鹏波 第一篇文章这是一个链接 站点配置文件 图表样式 Download Now 123456789&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt; &lt;title&gt;&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;]]></content>
+    <content type="text"><![CDATA[肖鹏波我是肖鹏波,我是哈哈哈阿达，我觉得还不错，解决解决 第一篇文章这是一个链接 站点配置文件 图表样式 Download Now 123456789&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt; &lt;title&gt;&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;]]></content>
       <categories>
         <category>前端</category>
       </categories>
