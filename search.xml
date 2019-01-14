@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C#_根据字符串找到对应的控件并操作]]></title>
+    <url>%2F2019%2F01%2F14%2FC-%E6%A0%B9%E6%8D%AE%E6%8E%A7%E4%BB%B6name%E6%89%BE%E5%88%B0%E8%AF%A5%E6%8E%A7%E4%BB%B6%E5%B9%B6%E5%BC%95%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[前言前段时间在做可视化程序设计大作业的时候遇到了很多问题，其中一个问题便是我今天写的这篇博客。 正文我的大作业做的是一个简单且小型的酒店管理系统，在这个系统中我设计了很多个button来代表每个房间。需要登记时，直接点击相应的button即可，登记完成后改变button的颜色等属性。因为需要对button控件的相关属性进行及时的修改，我们需要该控件的name才可以对该控件进行操作。 问题 举个例子，假设你现在有一个button控件，它的名字是BTN，如果我们要修改button控件的颜色，通常我们的做法是这样做的BTN.color=color.red(颜色随意)，也就是说我们一般都得知道button的控件name才可以对该控件操作。但是我的作业中需要把入住房间的信息存入数据库，其中就包含button控件的name属性，name中放的是房间号。但是我把这个name从数据库中读取出来后，它就是一个string类型的变量。我无法将这个string类型的字符串拿去操作一个控件的其他属性。那么，如何根据一个string类型的变量找到一个控件呢？，比如说我现在有一个 name名为BTN的button控件，我把它存到了数据库中，当我取出来后把它付给了变量a，图和通过a找到该button进行下一步操作呢？解决的办法如下(以button控件为例）： Button but = new Button();//新建一个button控件对象butstring a = “BTN” ;//把数据库中读取出来的name赋值给变量a but = (Button)this.Controls.Find(a, true)[0];//通过该函数，我们就把新建的button控件的对象but的name属性变成了BTNbut.BackColor = Color.Coral; //通过but我们就可以对控件进行下一步的操作。这样我们就可以通过变量a找到对应的控件，从而对name名为BTN控件的各个属性进行操作，这样大大简化了代码量，而不必去使用if……else语句进行判断了，使代码非常灵活。]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[C#_图片在Access数据库中的读入与读出]]></title>
     <url>%2F2019%2F01%2F12%2FC-%E5%9B%BE%E7%89%87%E5%9C%A8Access%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E7%9A%84%E8%AF%BB%E5%85%A5%E4%B8%8E%E8%AF%BB%E5%87%BA%2F</url>
     <content type="text"><![CDATA[前言&#8194;&#8194;最近在做C#大作业的时候需要添加了一个功能，就是每个用户都可以选择自己喜欢的头像，在登陆之后用户可以在主界面内看到自己的头像。我使用的是Access数据库。 实现方法&#8194;&#8194;思路：将图片以分解为二进制流存入数据库，读取的时候再将数据库中的二进制流转换为图片就OK。 将图片存入数据库的代码12345678910MemoryStream stream = new MemoryStream();byte[] photo = null;Image img = this.pictureBox1.Image;//将picturebox中的图片定义为一个Image对象img.Save(stream, System.Drawing.Imaging.ImageFormat.Bmp);photo = stream.ToArray();stream.Close();string sql = &quot;UPDATE employee set[touxiang] =@img where [username]=&apos;&quot; + username.Text + &quot;&apos;&quot;;//将图片存入数据库的sql命令语句(touxiang是我在数据库中起的列名，根据username将图片存入相对应的用户下面。)OleDbCommand comm = new OleDbCommand(sql, conn);comm.Parameters.Add(&quot;@img&quot;, OleDbType.VarBinary, photo.Length).Value = photo;comm.ExecuteNonQuery(); 将图片从数据库中读出来的代码12345678string sql = &quot;Select touxiang From employee Where[UserName]=&apos;&quot; + bianhao + &quot;&apos;&quot;;OleDbCommand comm = new OleDbCommand(sql, conn);OleDbDataReader sdr = comm.ExecuteReader();sdr.Read();//从数据库中读取MemoryStream ms = new MemoryStream((byte[])sdr[0]);Image image = Image.FromStream(ms);sdr.Close();pictureBox1.Image = image;//将图片放到picturebox中 Attention头文件中一定还要加上 using System.IO 在数据库中一定要设置头像列的数据类型为OLE对象，如下图所示：]]></content>

@@ -99,13 +99,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="一缕青丝一生叹">
-<meta property="og:url" content="http://yoursite.com/tags/font-size-4-color-0000FF-C-font/index.html">
+<meta name="description" content="前言前段时间在做可视化程序设计大作业的时候遇到了很多问题，其中一个问题便是我今天写的这篇博客。 正文我的大作业做的是一个简单且小型的酒店管理系统，在这个系统中我设计了很多个button来代表每个房间。需要登记时，直接点击相应的button即可，登记完成后改变button的颜色等属性。因为需要对button控件的相关属性进行及时的修改，我们需要该控件的name才可以对该控件进行操作。  问题 举个例">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C#_根据字符串找到对应的控件并操作">
+<meta property="og:url" content="http://yoursite.com/2019/01/14/C-根据控件name找到该控件并引用/index.html">
 <meta property="og:site_name" content="一缕青丝一生叹">
+<meta property="og:description" content="前言前段时间在做可视化程序设计大作业的时候遇到了很多问题，其中一个问题便是我今天写的这篇博客。 正文我的大作业做的是一个简单且小型的酒店管理系统，在这个系统中我设计了很多个button来代表每个房间。需要登记时，直接点击相应的button即可，登记完成后改变button的颜色等属性。因为需要对button控件的相关属性进行及时的修改，我们需要该控件的name才可以对该控件进行操作。  问题 举个例">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-14T13:59:44.598Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一缕青丝一生叹">
+<meta name="twitter:title" content="C#_根据字符串找到对应的控件并操作">
+<meta name="twitter:description" content="前言前段时间在做可视化程序设计大作业的时候遇到了很多问题，其中一个问题便是我今天写的这篇博客。 正文我的大作业做的是一个简单且小型的酒店管理系统，在这个系统中我设计了很多个button来代表每个房间。需要登记时，直接点击相应的button即可，登记完成后改变button的颜色等属性。因为需要对button控件的相关属性进行及时的修改，我们需要该控件的name才可以对该控件进行操作。  问题 举个例">
 
 
 
@@ -135,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/font-size-4-color-0000FF-C-font/">
+  <link rel="canonical" href="http://yoursite.com/2019/01/14/C-根据控件name找到该控件并引用/">
 
 
 
 
 
-  <title>标签: <font size="4" color="#0000FF">C#</font> | 一缕青丝一生叹</title>
+  <title>C#_根据字符串找到对应的控件并操作 | 一缕青丝一生叹</title>
   
 
 
@@ -160,7 +164,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/WinterSaber" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -296,52 +300,269 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1><font size="4" color="#0000FF">C#</font><small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/14/C-根据控件name找到该控件并引用/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pengbo Xiao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/ani.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一缕青丝一生叹">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/01/12/C-图片在Access数据库中的读入与读出/" itemprop="url">
-              
-                <span itemprop="name">C#_图片在Access数据库中的读入与读出</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">C#_根据字符串找到对应的控件并操作</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-12T15:19:05+08:00" content="2019-01-12">
-          01-12
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-14T21:10:41+08:00">
+                2019-01-14
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C#</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/14/C-根据控件name找到该控件并引用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/01/14/C-根据控件name找到该控件并引用/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读数<i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  577
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>前段时间在做可视化程序设计大作业的时候遇到了很多问题，其中一个问题便是我今天写的这篇博客。</p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>我的大作业做的是一个<font size="4" color="#0000FF">简单且小型</font>的酒店管理系统，在这个系统中我设计了很多个button来代表每个房间。需要登记时，直接点击相应的button即可，登记完成后改变button的颜色等属性。<br>因为需要对button控件的相关属性进行及时的修改，我们需要该控件的<font size="4" color="#0000FF">name</font>才可以对该控件进行操作。</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title=" 问题"></a><font size="4" color="#FF4040"> 问题</font></h2><p><font size="4" color="#B0C4DE"> 举个例子</font>，假设你现在有一个button控件，它的名字是<font size="4" color="black"><strong>BTN</strong></font>，如果我们要修改button控件的颜色，通常我们的做法是这样做的<font size="4" color="black"><strong>BTN.color=color.red</strong></font>(颜色随意)，也就是说我们一般都得知道button的控件name才可以对该控件操作。<br>但是我的作业中需要把入住房间的信息存入数据库，其中就包含button控件的name属性，name中放的是房间号。但是我把这个name从数据库中读取出来后，它就是一个string类型的变量。我无法将这个string类型的字符串拿去操作一个控件的其他属性。<br>那么，如何<font size="4" color="#B0C4DE">根据一个string类型的变量找到一个控件呢？</font>，比如说我现在有一个<font size="4" color="#FF4040"> name名为BTN</font>的button控件，我把它存到了数据库中，当我取出来后把它付给了变量a，图和通过a找到该button进行下一步操作呢？解决的办法如下(以button控件为例）：<br> Button but = new Button();//新建一个button控件对象but<br>string a = “BTN” ;//把数据库中读取出来的name赋值给变量a</p>
+<p><font size="4" color="#black"><strong>but = (Button)this.Controls.Find(a, true)[0];</strong></font>//通过该函数，我们就把新建的button控件的对象but的name属性变成了BTN<br>but.BackColor = Color.Coral;  //通过but我们就可以对控件进行下一步的操作。<br>这样我们就可以通过变量a找到对应的控件，从而对name名为BTN控件的各个属性进行操作，这样大大简化了代码量，而不必去使用if……else语句进行判断了，使代码非常灵活。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="Pengbo Xiao 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="Pengbo Xiao 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+    <div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:30px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+  
+</div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/12/C-图片在Access数据库中的读入与读出/" rel="next" title="C#_图片在Access数据库中的读入与读出">
+                <i class="fa fa-chevron-left"></i> C#_图片在Access数据库中的读入与读出
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c34a9d7e768b646" async="async"></script>
+</div>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -349,6 +570,23 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
+        <div id="gitment-container" style="display:none"></div>
+      
+    </div>
+
+  
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
         </div>
         
           
@@ -368,8 +606,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -453,6 +700,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">2.1.</span> <span class="nav-text"> 问题</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -644,6 +907,10 @@ setInterval("createtime()",250);
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -695,6 +962,34 @@ setInterval("createtime()",250);
       </style>
     
 
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: '1547471441000',
+            owner: 'WinterSaber',
+            repo: 'hexo_comment',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '260a0d36a5cf371d39113dc9cec4545a0e444771',
+            
+                client_id: '9d6404b6984bd3d12688'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      function showGitment(){
+        document.getElementById("gitment-display-button").style.display = "none";
+        document.getElementById("gitment-container").style.display = "block";
+        renderGitment();
+      }
+      
+      </script>
     
 
 
@@ -1056,6 +1351,23 @@ setInterval("createtime()",250);
 
   
   
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 15936,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
 
   
 
